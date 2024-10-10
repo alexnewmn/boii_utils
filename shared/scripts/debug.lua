@@ -20,7 +20,7 @@
 --- @param label string: The label for the message type (e.g., 'LOG', 'INFO').
 --- @param message string: The content of the message.
 local function print_message(colour, label, message)
-    local invoking_resource = GetInvokingResource() or 'unknown'
+    local invoking_resource = GetInvokingResource() or GetCurrentResourceName() or 'unknown'
     print("^" .. colour .. "[" .. label .. "] ^7- Resource: '" .. invoking_resource .. "' ^7- " .. message)
 end
 
